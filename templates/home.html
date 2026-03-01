@@ -1,0 +1,132 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Flight Price Prediction</title>
+
+		<!-- Bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+		<!-- CSS -->
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/styles.css') }}" />
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<a
+					class="navbar-brand"
+					href="/"
+					>Flight Price Prediction</a
+				>
+			</div>
+		</nav>
+
+		<br /><br /><br />
+
+		<div class="container">
+			<form
+				action="{{ url_for('predict') }}"
+				method="post">
+				<!-- Departure & Arrival -->
+				<div class="row">
+					<div class="col-sm-6">
+						<h5>Date of Departure</h5>
+						<input
+							type="datetime-local"
+							name="Dep_Time"
+							required />
+					</div>
+
+					<div class="col-sm-6">
+						<h5>Date of Arrival</h5>
+						<input
+							type="datetime-local"
+							name="Arrival_Time"
+							required />
+					</div>
+				</div>
+
+				<br /><br />
+
+				<!-- Source & Destination -->
+				<div class="row">
+					<div class="col-sm-6">
+						<h5>Source</h5>
+						<select
+							name="Source"
+							required>
+							<option value="Delhi">Delhi</option>
+							<option value="Kolkata">Kolkata</option>
+							<option value="Mumbai">Mumbai</option>
+							<option value="Chennai">Chennai</option>
+						</select>
+					</div>
+
+					<div class="col-sm-6">
+						<h5>Destination</h5>
+						<select
+							name="Destination"
+							required>
+							<option value="Cochin">Cochin</option>
+							<option value="Delhi">Delhi</option>
+							<option value="Hyderabad">Hyderabad</option>
+							<option value="Kolkata">Kolkata</option>
+						</select>
+					</div>
+				</div>
+
+				<br /><br />
+
+				<!-- Stops & Airline -->
+				<div class="row">
+					<div class="col-sm-6">
+						<h5>No. of Stops</h5>
+						<select
+							name="stops"
+							required>
+							<option value="0">Non-Stop</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</div>
+
+					<div class="col-sm-6">
+						<h5>Preferred Airline</h5>
+						<select
+							name="airline"
+							required>
+							<option value="Jet Airways">Jet Airways</option>
+							<option value="IndiGo">IndiGo</option>
+							<option value="Air India">Air India</option>
+							<option value="Multiple carriers">Multiple carriers</option>
+							<option value="SpiceJet">SpiceJet</option>
+							<option value="Vistara">Vistara</option>
+							<option value="GoAir">GoAir</option>
+							<option value="Air Asia">Air Asia</option>
+							<option value="Trujet">Trujet</option>
+						</select>
+					</div>
+				</div>
+
+				<br /><br />
+
+				<input
+					type="submit"
+					value="Predict Price"
+					class="btn btn-secondary" />
+			</form>
+
+			<br />
+			<h3>{{ prediction_text }}</h3>
+		</div>
+	</body>
+</html>
