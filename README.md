@@ -7,8 +7,8 @@
 * In this project, we are going to build a Python Flight Fare Prediction App, that returns the fare prediction for a given set of travel details, like:  departure date, arrival date, departure city, arrival city, stoppages, and the airline carrier.
 
 ## Project Home Page
-![Project Screenshot](assets/screenshot.png)
-![Project Screenshot](https://github.com/Ayasha0/repo/blob/main/assets/screenshot.png?raw=true)
+![Project Screenshot](images/screenshots.png)
+
 
 ## App Functionality
 ![](templates/App_Functionality.gif)
@@ -52,4 +52,5 @@ If you find a bug (the website couldn't handle the query and / or gave undesired
 ### Important links:
 * [Dataset](https://www.kaggle.com/datasets/nikhilmittal/flight-fare-prediction-mh)
 * [Project Folder on Drive](https://drive.google.com/drive/folders/1vnapi048bbmoXyoxOLLX6W_tA6a1uQ9w?usp=sharing)
+
 
